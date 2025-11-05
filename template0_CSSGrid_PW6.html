@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+    /* Common styles NE PAS MODIFIER */
+    body, html{
+      padding:0;
+      margin:0;
+      background:#999;
+      width:100vw;
+      min-height:100vh;
+    }
+    header{
+      background:#feb;
+    }
+    article{
+      background:#dd8;
+    }
+    nav{
+      background:#ccf;
+    }
+    aside{
+      background:#ccf;
+    }
+    footer{
+      background:#feb;
+    }
+    header, article, nav, aside, footer{
+      border-radius:5px;
+      padding:5px;
+    }
+
+    /* Votre code CSS pour design par Grid ci-après */
+    * , *::before, *::after{ box-sizing:border-box; }
+   
+
+   
+    @media (max-width: 639px){
+      body{
+        display:grid;
+       
+        padding:16px;
+        gap:16px;
+        grid-template-columns: 1fr;
+       
+        grid-template-rows:
+          minmax(60px, auto)
+          minmax(120px, 1fr)
+          minmax(60px, auto)
+          minmax(60px, auto)
+          minmax(60px, auto);
+      }
+     
+    }
+
+   
+    @media (min-width: 640px){
+      body{
+        display:grid;
+        padding:16px; 
+        gap:16px;    
+        grid-template-columns: minmax(160px, 280px) 1fr minmax(160px, 280px);
+        grid-template-rows: minmax(60px, auto) 1fr minmax(60px, auto);
+        grid-template-areas:
+          "header header header"
+          "nav    article aside"
+          "footer footer footer";
+      }
+      header{ grid-area: header; }
+      nav{ grid-area: nav; }
+      article{ grid-area: article; }
+      aside{ grid-area: aside; }
+      footer{ grid-area: footer; }
+    }
+
+
+  </style>
+</head>
+<!-- NE PAS MODIFIER LE CODE CI-APRES -->
+<body>
+  <header>Header</header>
+  <article>Article</article>
+  <nav>Navigation</nav>
+  <aside>Aside</aside>
+  <footer>Footer</footer>
+</body>
+</html>
